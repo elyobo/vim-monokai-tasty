@@ -173,22 +173,31 @@ call Highlight("jsObjectBraces", s:white, s:none, s:none)
 call Highlight("jsFinallyBraces", s:white, s:none, s:none)
 call Highlight("jsRepeatBraces", s:white, s:none, s:none)
 call Highlight("jsSwitchBraces", s:white, s:none, s:none)
-call Highlight("jsTemplateBraces", s:white, s:none, s:none)
 
-call Highlight("jsDestructuringBraces", s:white, s:none, s:none)
+" Green italic strings please
+call Highlight("jsString", s:light_green, s:none, s:italic)
+call Highlight("jsTemplateString", s:light_green, s:none, s:italic)
+" And reduce visibility of the ${} in template strings, the variable stands out
+call Highlight("jsTemplateBraces", s:olive, s:none, s:none)
+
+" Match destructuring braces colour with destructuring assignment colour
+call Highlight("jsDestructuringBraces", s:grey, s:none, s:none)
+call Highlight("jsDestructuringAssignment", s:grey, s:none, s:none)
+
 call Highlight("jsFuncName", s:light_green, s:none, s:none)
-call Highlight("jsFuncCall", s:light_blue, s:none, s:none)
 call Highlight("jsClassFuncName", s:light_green, s:none, s:none)
 call Highlight("jsArguments", s:orange, s:none, s:italic)
 call Highlight("jsFuncArgs", s:orange, s:none, s:italic)
 call Highlight("jsClassKeyword", s:light_blue, s:none, s:italic)
 
+" Match func call parens colour with func call colour
+call Highlight("jsParens", s:light_blue, s:none, s:none)
+call Highlight("jsFuncCall", s:light_blue, s:none, s:none)
+
 call Highlight("jsThis", s:orange, s:none, s:italic)
 call Highlight("jsUndefined", s:purple, s:none, s:none)
 call Highlight("jsNull", s:purple, s:none, s:none)
-call Highlight("jsParens", s:white, s:none, s:none)
 call Highlight("jsFuncParens", s:white, s:none, s:none)
-call Highlight("jsGlobalObjects", s:light_blue, s:none, s:none)
 call Highlight("jsFunction", s:light_blue, s:none, s:italic)
 call Highlight("jsClassMethodType", s:light_blue, s:none, s:italic)
 call Highlight("jsObjectKey", s:white, s:none, s:none)
@@ -196,9 +205,15 @@ call Highlight("jsBlockLabel", s:white, s:none, s:none)
 call Highlight("jsObjectColon", s:magenta, s:none, s:none)
 call Highlight("jsObjectSeparator", s:purple, s:none, s:none)
 call Highlight("jsNoise", s:white, s:none, s:none)
+
+" Make node glob and other globals the same
+call Highlight("jsGlobalObjects", s:magenta, s:none, s:none)
 call Highlight("jsGlobalNodeObjects", s:magenta, s:none, s:none)
 
 call Highlight("EcmaScriptTemplateStrings", s:yellow, s:none, s:italic)
+
+" Switch const/let/var to not have the same colour as function calls
+call Highlight("jsStorageClass", s:yellow, s:none, s:italic)
 
 hi def link jsComment              Comment
 hi def link jsEnvComment           Comment
