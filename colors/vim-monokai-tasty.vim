@@ -184,6 +184,9 @@ call Highlight("jsTemplateBraces", s:olive, s:none, s:none)
 call Highlight("jsDestructuringBraces", s:grey, s:none, s:none)
 call Highlight("jsDestructuringAssignment", s:grey, s:none, s:none)
 
+" Destructuring property is destructuring with default, no need to differentiate
+call Highlight("jsDestructuringProperty", s:white, s:none, s:none)
+
 call Highlight("jsFuncName", s:light_green, s:none, s:none)
 call Highlight("jsClassFuncName", s:light_green, s:none, s:none)
 call Highlight("jsArguments", s:orange, s:none, s:italic)
@@ -214,6 +217,17 @@ call Highlight("EcmaScriptTemplateStrings", s:yellow, s:none, s:italic)
 
 " Switch const/let/var to not have the same colour as function calls
 call Highlight("jsStorageClass", s:yellow, s:none, s:italic)
+
+" Typescript
+
+call Highlight("typescriptStorageClass", s:yellow, s:none, s:italic)
+
+" Green italic strings please
+call Highlight("typescriptStringS", s:light_green, s:none, s:italic)
+call Highlight("typescriptStringD", s:light_green, s:none, s:italic)
+call Highlight("typescriptStringB", s:light_green, s:none, s:italic)
+" And reduce visibility of the ${} in template strings, the variable stands out
+call Highlight("typescriptInterpolationDelimiter", s:olive, s:none, s:none)
 
 hi def link jsComment              Comment
 hi def link jsEnvComment           Comment
@@ -356,6 +370,17 @@ call Highlight("NERDTreeFile", s:none, s:none, s:none)
 
 " Ruby
 call Highlight("rubyStringDelimiter", s:yellow, s:none, s:none)
+
+" PHP
+call Highlight("phpDefine", s:light_blue, s:none, s:none)
+call Highlight("phpFunctions", s:light_blue, s:none, s:none)
+call Highlight("phpFunction", s:light_green, s:none, s:none)
+call Highlight("phpMethod", s:light_blue, s:none, s:none)
+" call Highlight("phpRegion", s:light_green, s:none, s:none)
+call Highlight("phpStringSingle", s:light_green, s:none, s:italic)
+call Highlight("phpStringDouble", s:olive, s:none, s:italic)
+call Highlight("phpIdentifier", s:yellow, s:none, s:italic)
+
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
